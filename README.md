@@ -38,3 +38,6 @@ A couple of other fields that may be of interest are: 'description', which is th
 The format for doing this confused me a bit.  So I have `new_quiz`, but I want to change the 'assignment' for example to more accurately describe the quiz.  I have a string called `desc` that holds the new description.  To edit the quiz, I run the command:
 `new_quiz.edit(quit={'description':desc} )`
 You have to call edit, you have to pass in a names parameter `quiz` and then have a dictionary with the new information.  A bit counter-intuitive to me, but now it is documents, so have fun editing things!
+
+# Moving forward
+I think I want to look into using Pandoc.  Canvas expects the descriptions, quiz questions, etc. to be in HTML. Pandoc can take in a markdown file and spit out HTML, and is supposed to handle LaTeX as well. I can pull in a Markdown file and spit out a description and an exact copy for the quiz question and post them both into Canvas.  Now, the question is how to read in the questions.  JSON?  XML? YAML?  Something else?
