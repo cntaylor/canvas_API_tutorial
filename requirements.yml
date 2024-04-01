@@ -1,0 +1,12 @@
+name: canvasAPI
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python
+  - ipython
+  - matplotlib
+  - numpy
+  - markdown
+
+# After doing conda, should really do `pip install canvasapi`
