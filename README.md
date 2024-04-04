@@ -5,20 +5,25 @@ For now this repository is just there to record what I had to do to get things w
 ## Getting started
 To start with, install canvasapi in your Python environment (`pip install canvasapi` should work).  Following [this example](https://canvasapi.readthedocs.io/en/stable/examples.html#boilerplate), you will need the URL of Canvas and an API_KEY.  To get the API_KEY:
 * Login into Canvas
-* On the left, click on the "person in a circle" icon and go to Settings
+* Click on the user icon and go to Settings
 * Click the button called "New Access Token"
 * This will give you a token that you need to copy and put somewhere. This token is your "API_KEY"
 
-At this point, in Python, you can create a canvas object and it will be linked to your account.  To find the course I am interested in, I did:
+At this point, in Python, you can create a canvas object using the command 
+`course = canvas.get_course(12208)`
+
+The easiest way to find your course number is to go to your course in the web browser and see the course number in the web link.  Or, you can do the following:
+
 ```
-canvas.get_current_user().get_courses()
+courses = canvas.get_current_user().get_courses()
 for course in courses:
   print(course)
 ```
-From the printout, I grabbed the course number I was interested in (21903, if you care) and then did:
-`course = canvas.get_course(21903)`
+From the printout, I grabbed the course number I was interested in (21903, if you care)
 
-I am now living in the course.
+The `course` variable now lets you get into things in your course.
+
+* If you get SSL errors when doing this, see [this page](DoDcerts.md)
 
 ## Creating a new quiz
 The key to creating a new quiz is creating a dictionary in Python.  This dictionary should have fields as described in [this webpage](https://canvas.instructure.com/doc/api/quizzes.html#method.quizzes/quizzes_api.update).  I was able to create a quiz with just the following information:
@@ -36,7 +41,7 @@ A couple of other fields that may be of interest are: 'description', which is th
 
 ## Editing an existing quiz
 The format for doing this confused me a bit.  So I have `new_quiz`, but I want to change the 'assignment' for example to more accurately describe the quiz.  I have a string called `desc` that holds the new description.  To edit the quiz, I run the command:
-`new_quiz.edit(quit={'description':desc} )`
+`new_quiz.edit(quiz={'description':desc} )`
 You have to call edit, you have to pass in a names parameter `quiz` and then have a dictionary with the new information.  A bit counter-intuitive to me, but now it is documents, so have fun editing things!
 
 # Moving forward
