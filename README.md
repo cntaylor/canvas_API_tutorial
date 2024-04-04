@@ -20,6 +20,8 @@ From the printout, I grabbed the course number I was interested in (21903, if yo
 
 I am now living in the course.
 
+* If you get SSL errors when doing this, see [this page](DoDcerts.md)
+
 ## Creating a new quiz
 The key to creating a new quiz is creating a dictionary in Python.  This dictionary should have fields as described in [this webpage](https://canvas.instructure.com/doc/api/quizzes.html#method.quizzes/quizzes_api.update).  I was able to create a quiz with just the following information:
 ```
