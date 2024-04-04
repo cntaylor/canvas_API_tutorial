@@ -5,13 +5,13 @@ For now this repository is just there to record what I had to do to get things w
 ## Getting started
 To start with, install canvasapi in your Python environment (`pip install canvasapi` should work).  Following [this example](https://canvasapi.readthedocs.io/en/stable/examples.html#boilerplate), you will need the URL of Canvas and an API_KEY.  To get the API_KEY:
 * Login into Canvas
-* On the left, click on the "person in a circle" icon and go to Settings
+* Click on the user icon and go to Settings
 * Click the button called "New Access Token"
 * This will give you a token that you need to copy and put somewhere. This token is your "API_KEY"
 
 At this point, in Python, you can create a canvas object and it will be linked to your account.  To find the course I am interested in, I did:
 ```
-canvas.get_current_user().get_courses()
+courses = canvas.get_current_user().get_courses()
 for course in courses:
   print(course)
 ```
