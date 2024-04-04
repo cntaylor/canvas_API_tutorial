@@ -9,16 +9,19 @@ To start with, install canvasapi in your Python environment (`pip install canvas
 * Click the button called "New Access Token"
 * This will give you a token that you need to copy and put somewhere. This token is your "API_KEY"
 
-At this point, in Python, you can create a canvas object and it will be linked to your account.  To find the course I am interested in, I did:
+At this point, in Python, you can create a canvas object using the command 
+`course = canvas.get_course(12208)`
+
+The easiest way to find your course number is to go to your course in the web browser and see the course number in the web link.  Or, you can do the following:
+
 ```
 courses = canvas.get_current_user().get_courses()
 for course in courses:
   print(course)
 ```
-From the printout, I grabbed the course number I was interested in (21903, if you care) and then did:
-`course = canvas.get_course(21903)`
+From the printout, I grabbed the course number I was interested in (21903, if you care)
 
-I am now living in the course.
+The `course` variable now lets you get into things in your course.
 
 * If you get SSL errors when doing this, see [this page](DoDcerts.md)
 
