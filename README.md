@@ -36,7 +36,7 @@ A couple of other fields that may be of interest are: 'description', which is th
 
 ## Editing an existing quiz
 The format for doing this confused me a bit.  So I have `new_quiz`, but I want to change the 'assignment' for example to more accurately describe the quiz.  I have a string called `desc` that holds the new description.  To edit the quiz, I run the command:
-`new_quiz.edit(quit={'description':desc} )`
+`new_quiz.edit(quiz={'description':desc} )`
 You have to call edit, you have to pass in a names parameter `quiz` and then have a dictionary with the new information.  A bit counter-intuitive to me, but now it is documents, so have fun editing things!
 
 # Moving forward
