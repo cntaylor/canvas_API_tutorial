@@ -7,7 +7,7 @@ SSLError: HTTPSConnectionPool(host='aueems.cce.af.mil', port=443): Max retries e
 
 Turns out this is typically an error in the root certificates on your machine.  
 
-The first thing to check is if you can go to the API through your web browser. If so, then your web browser has some root certificates that your Python program is not seeing.  You can also check what the root certificate is that you are missing [instructions here](https://www.hostgator.com/help/article/how-to-check-the-ssl-information-of-websites).
+The first thing to check is if you can go to the API web address through your web browser. If so, then your web browser has some root certificates that your Python program is not seeing.  You can also check what the root certificate is that you are missing [instructions here](https://www.hostgator.com/help/article/how-to-check-the-ssl-information-of-websites).
 
 To solve this for DoD Certs requires two things:
 1.  The root DoD certificates
